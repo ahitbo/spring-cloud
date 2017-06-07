@@ -5,7 +5,7 @@ server:
   port: 8081
 logging:
   level:
-    root: INFO
+    root: ERROR
 eureka:
   client: 
     serviceUrl:
