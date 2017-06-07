@@ -45,8 +45,11 @@
 		<module>member</module>
 		<module>point</module>
 		<module>member-admin</module>
+		<module>point-admin</module>
 		<module>eureka</module>
 		<module>eureka-ha</module>
+		<module>hystrix-dashboard</module>
+		<module>hystrix-turbine</module>
 	</modules>
 
 	<build>
