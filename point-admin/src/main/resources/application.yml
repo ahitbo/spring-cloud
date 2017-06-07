@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: point-admin
+server:
+  port: 8084
+logging:
+  level:
+    root: ERROR
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://admin:admin123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+member: 
+  ribbon: 
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+feign: 
+  hystrix: 
+    enabled: true
