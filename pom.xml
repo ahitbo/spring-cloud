@@ -50,6 +50,7 @@
 		<module>eureka-ha</module>
 		<module>hystrix-dashboard</module>
 		<module>hystrix-turbine</module>
+		<module>zuul</module>
 	</modules>
 
 	<build>
