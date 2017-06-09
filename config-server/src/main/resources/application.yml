@@ -28,4 +28,5 @@ eureka:
     metadataMap:
       user: admin
       password: admin123
-
+encrypt:
+  key: wufang
