@@ -23,5 +23,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>ibm-starter</groupId>
+			<artifactId>ibm-starter-mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ibm-starter</groupId>
+			<artifactId>ibm-starter-durid</artifactId>
+		</dependency>
 	</dependencies>
 </project>
