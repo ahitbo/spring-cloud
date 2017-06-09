@@ -1,14 +1,7 @@
-spring:
-  application:
-    name: member
-server:
-  port: 8082
 logging:
   level:
-    root: ERROR
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://admin:admin123@localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
+    root: INFO
+management:
+  security:
+    enabled: false
+

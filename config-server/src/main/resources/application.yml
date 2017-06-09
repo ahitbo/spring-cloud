@@ -23,4 +23,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://admin:admin123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    metadataMap:
+      user: admin
+      password: admin123
 
