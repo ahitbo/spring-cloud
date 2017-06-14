@@ -16,6 +16,7 @@ zuul:
   routes:
     point: /p/**
     member: /m/**
+
 management:
   security:
     enabled: false

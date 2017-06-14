@@ -14,5 +14,8 @@ eureka:
       defaultZone: http://admin:admin123@localhost:8761/eureka
   instance:
     prefer-ip-address: true
+    metadata-map:
+      groupKey: member
+      threadPoolKey: member
 
     

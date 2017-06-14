@@ -1,5 +1,5 @@
 server:
-  port: 9999
+  port: 9979
 security:
   basic:
     enabled: true
@@ -16,9 +16,9 @@ spring:
     config:
      server:
         git:
-          uri: https://github.com/ahitbo/repo-spring-cloud
-          username: 
-          password:   
+          uri: https://github.com/ahitbo/repo-spring-cloud.git
+          username: aihao001
+          password: ah11271126
 eureka:
   client:
     serviceUrl:

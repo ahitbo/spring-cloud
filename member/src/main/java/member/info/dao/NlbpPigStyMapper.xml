@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member.info.dao.NlbpPigStyDao">
+  <resultMap id="BaseResultMap" type="member.info.domain.NlbpPigStyModel">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="hogpenid" jdbcType="BIGINT" property="hogpenid" />
+    <result column="productid" jdbcType="BIGINT" property="productid" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="helpcode" jdbcType="VARCHAR" property="helpcode" />
+    <result column="ebscode" jdbcType="VARCHAR" property="ebscode" />
+    <result column="sty_type" jdbcType="VARCHAR" property="styType" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="created_by" jdbcType="BIGINT" property="createdBy" />
+    <result column="last_updated_by" jdbcType="BIGINT" property="lastUpdatedBy" />
+    <result column="creation_date" jdbcType="TIMESTAMP" property="creationDate" />
+    <result column="last_update_date" jdbcType="TIMESTAMP" property="lastUpdateDate" />
+    <result column="organization_id" jdbcType="BIGINT" property="organizationId" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="attribute1" jdbcType="VARCHAR" property="attribute1" />
+    <result column="attribute2" jdbcType="VARCHAR" property="attribute2" />
+    <result column="attribute3" jdbcType="VARCHAR" property="attribute3" />
+    <result column="attribute4" jdbcType="VARCHAR" property="attribute4" />
+    <result column="attribute5" jdbcType="VARCHAR" property="attribute5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, hogpenid, productid, number, name, helpcode, ebscode, sty_type, remarks, created_by, 
+    last_updated_by, creation_date, last_update_date, organization_id, start_date, end_date, 
+    attribute1, attribute2, attribute3, attribute4, attribute5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from nlbp_pig_sty
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from nlbp_pig_sty
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="member.info.domain.NlbpPigStyModel">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into nlbp_pig_sty (hogpenid, productid, number, 
+      name, helpcode, ebscode, 
+      sty_type, remarks, created_by, 
+      last_updated_by, creation_date, last_update_date, 
+      organization_id, start_date, end_date, 
+      attribute1, attribute2, attribute3, 
+      attribute4, attribute5)
+    values (#{hogpenid,jdbcType=BIGINT}, #{productid,jdbcType=BIGINT}, #{number,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{helpcode,jdbcType=VARCHAR}, #{ebscode,jdbcType=VARCHAR}, 
+      #{styType,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{createdBy,jdbcType=BIGINT}, 
+      #{lastUpdatedBy,jdbcType=BIGINT}, #{creationDate,jdbcType=TIMESTAMP}, #{lastUpdateDate,jdbcType=TIMESTAMP}, 
+      #{organizationId,jdbcType=BIGINT}, #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, 
+      #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
+      #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="member.info.domain.NlbpPigStyModel">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into nlbp_pig_sty
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hogpenid != null">
+        hogpenid,
+      </if>
+      <if test="productid != null">
+        productid,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="helpcode != null">
+        helpcode,
+      </if>
+      <if test="ebscode != null">
+        ebscode,
+      </if>
+      <if test="styType != null">
+        sty_type,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="createdBy != null">
+        created_by,
+      </if>
+      <if test="lastUpdatedBy != null">
+        last_updated_by,
+      </if>
+      <if test="creationDate != null">
+        creation_date,
+      </if>
+      <if test="lastUpdateDate != null">
+        last_update_date,
+      </if>
+      <if test="organizationId != null">
+        organization_id,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="attribute1 != null">
+        attribute1,
+      </if>
+      <if test="attribute2 != null">
+        attribute2,
+      </if>
+      <if test="attribute3 != null">
+        attribute3,
+      </if>
+      <if test="attribute4 != null">
+        attribute4,
+      </if>
+      <if test="attribute5 != null">
+        attribute5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hogpenid != null">
+        #{hogpenid,jdbcType=BIGINT},
+      </if>
+      <if test="productid != null">
+        #{productid,jdbcType=BIGINT},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="helpcode != null">
+        #{helpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ebscode != null">
+        #{ebscode,jdbcType=VARCHAR},
+      </if>
+      <if test="styType != null">
+        #{styType,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdatedBy != null">
+        #{lastUpdatedBy,jdbcType=BIGINT},
+      </if>
+      <if test="creationDate != null">
+        #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateDate != null">
+        #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="organizationId != null">
+        #{organizationId,jdbcType=BIGINT},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="attribute1 != null">
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="member.info.domain.NlbpPigStyModel">
+    update nlbp_pig_sty
+    <set>
+      <if test="hogpenid != null">
+        hogpenid = #{hogpenid,jdbcType=BIGINT},
+      </if>
+      <if test="productid != null">
+        productid = #{productid,jdbcType=BIGINT},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="helpcode != null">
+        helpcode = #{helpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ebscode != null">
+        ebscode = #{ebscode,jdbcType=VARCHAR},
+      </if>
+      <if test="styType != null">
+        sty_type = #{styType,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null">
+        created_by = #{createdBy,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdatedBy != null">
+        last_updated_by = #{lastUpdatedBy,jdbcType=BIGINT},
+      </if>
+      <if test="creationDate != null">
+        creation_date = #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateDate != null">
+        last_update_date = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="organizationId != null">
+        organization_id = #{organizationId,jdbcType=BIGINT},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        end_date = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="attribute1 != null">
+        attribute1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        attribute2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        attribute3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        attribute4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        attribute5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="member.info.domain.NlbpPigStyModel">
+    update nlbp_pig_sty
+    set hogpenid = #{hogpenid,jdbcType=BIGINT},
+      productid = #{productid,jdbcType=BIGINT},
+      number = #{number,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      helpcode = #{helpcode,jdbcType=VARCHAR},
+      ebscode = #{ebscode,jdbcType=VARCHAR},
+      sty_type = #{styType,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      created_by = #{createdBy,jdbcType=BIGINT},
+      last_updated_by = #{lastUpdatedBy,jdbcType=BIGINT},
+      creation_date = #{creationDate,jdbcType=TIMESTAMP},
+      last_update_date = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      organization_id = #{organizationId,jdbcType=BIGINT},
+      start_date = #{startDate,jdbcType=DATE},
+      end_date = #{endDate,jdbcType=DATE},
+      attribute1 = #{attribute1,jdbcType=VARCHAR},
+      attribute2 = #{attribute2,jdbcType=VARCHAR},
+      attribute3 = #{attribute3,jdbcType=VARCHAR},
+      attribute4 = #{attribute4,jdbcType=VARCHAR},
+      attribute5 = #{attribute5,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

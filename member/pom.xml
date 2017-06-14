@@ -28,8 +28,8 @@
 			<artifactId>ibm-starter-mybatis</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>ibm-starter</groupId>
-			<artifactId>ibm-starter-durid</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 	</dependencies>
 </project>
