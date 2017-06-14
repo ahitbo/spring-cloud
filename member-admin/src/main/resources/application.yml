@@ -5,9 +5,11 @@ server:
   port: 8081
 management:
   port: 6081
+  security:
+    enabled: false
 logging:
   level:
-    root: ERROR
+    root: INFO
 eureka:
   client: 
     serviceUrl:
@@ -22,3 +24,16 @@ member:
 feign: 
   hystrix: 
     enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+  threadpool: 
+    member:
+      coreSize: 2
+      maximumSize: 2
+    point:
+      coreSize: 2
+      maximumSize: 2

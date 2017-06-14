@@ -10,7 +10,7 @@ public class MemberFeignClientFallbackFactory implements FallbackFactory<MemberF
 
 	@Override
 	public MemberFeignClient create(Throwable arg0) {
-		System.out.println(arg0);
+		//System.out.println(arg0);
 		return new MemberFeignClient() {
 			
 			@Override
