@@ -60,6 +60,7 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <id>docker-registry</id>
                     <registryUrl>http://192.168.56.102:5000/v2/</registryUrl>
                 </configuration>
             </plugin>
