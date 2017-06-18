@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.druid.pool.DruidDataSource;
+//import com.alibaba.druid.pool.DruidDataSource;
 
 import member.info.dao.NlbpPigStyDao;
 import member.info.domain.Member;
@@ -16,8 +16,8 @@ import member.info.domain.NlbpPigStyModel;
 @RestController
 @RequestMapping("/member")
 public class MemberInfoService {
-	@Autowired
-	DruidDataSource druidDataSource;
+	//@Autowired
+	//DruidDataSource druidDataSource;
 	@Autowired
 	NlbpPigStyDao nlbpPigStyDao;
 	
